@@ -1,0 +1,2 @@
+(this["webpackJsonpreact-graphql-materialui-planet-earth-countries-v2"]=this["webpackJsonpreact-graphql-materialui-planet-earth-countries-v2"]||[]).push([[0],{11:function(t,e,n){"use strict";n.r(e);var r=n(0),a=n.n(r),c=n(3),i=n.n(c),s=(n(8),n(9),n(1));var o=function(){return Object(s.jsx)("div",{className:"App"})};i.a.render(Object(s.jsx)(a.a.StrictMode,{children:Object(s.jsx)(o,{})}),document.getElementById("root"))},8:function(t,e,n){},9:function(t,e,n){}},[[11,1,2]]]);
+//# sourceMappingURL=main.323f8d78.chunk.js.map
