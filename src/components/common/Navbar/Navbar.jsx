@@ -15,6 +15,7 @@ const Navbar = () => {
     <Toolbar className={classes.toolbar}>
       <Typography variant="h5" className={classes.t1}>
         Planet Earth Countries
+        <img className={classes.img} src="https://img.icons8.com/cotton/30/000000/earth-planet--v2.png"/>
       </Typography>
       <div className={classes.topDiv}>
       <Typography className={classes.typo}>

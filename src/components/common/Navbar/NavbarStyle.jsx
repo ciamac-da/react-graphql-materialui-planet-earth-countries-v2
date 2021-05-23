@@ -30,6 +30,10 @@ const useStyles = makeStyles((theme) =>({
         display: "flex",
         flexDirection: "column"
     },
+    img: {
+        position:"relative", 
+        top:"4px", left:"1px" 
+    },
   t1:{
      color: "#3273dc",
      fontWeight: "bolder !important",

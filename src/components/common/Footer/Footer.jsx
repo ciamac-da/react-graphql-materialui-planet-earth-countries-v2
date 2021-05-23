@@ -9,7 +9,7 @@ const Footer = () => {
                   <footer       className={classes.footer} >
                   <Typography   className={classes.typo}   >
                   Copyright {" "} &copy;  {new Date().getFullYear()}
-                  &nbsp; Cia from Earth! All rights reserved.
+                  &nbsp; Marti4n! All rights reserved.
                   </Typography>
                   </footer>
             </div>

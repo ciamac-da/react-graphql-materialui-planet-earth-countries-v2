@@ -2,15 +2,21 @@ import React from "react";
 import Navbar from "../components/common/Navbar/Navbar";
 import Footer from '../components/common/Footer/Footer';
 import Translate from "../components/Translate/Translate";
-import './App.css';
+import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 
 function App() {
+  const client = new ApolloClient({
+    uri: 'https://countries.trevorblades.com/',
+    cache: new InMemoryCache()
+  })
   return (
-    <div className="App">
+    <>
+    <ApolloProvider client={client}>
     <Navbar />
     <Translate />
     <Footer />
-    </div>
+    </ApolloProvider>
+    </>
   );
 }
 
