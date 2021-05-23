@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
    backgroundColor:"rgb(255, 0, 32);",
    textAlign:"center",
    position:"fixed",
-   bottom: 0,
+   bottom: 34,
    display:"block",
    width:"100vw",
    marginBottom:"0px",
