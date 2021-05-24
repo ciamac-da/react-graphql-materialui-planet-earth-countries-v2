@@ -1,15 +1,13 @@
 import React from 'react';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import useStyles from "./CountriesStyle";
 
 
-const Countries = (myCountries) => {
+ export const Countries = ({myCountries, addLang}) => {
   const classes = useStyles();
   return (
       <div className={classes.cards}>
@@ -21,12 +19,13 @@ const Countries = (myCountries) => {
           title="Contemplative Reptile"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography  >
           Country Name
-          {myCountries.name}
+          {console.log(myCountries)}
           </Typography>
           <Typography  gutterBottom  variant="h5"  component="h2">
           Code
+          {myCountries.code}
           </Typography>
           <Typography gutterBottom   variant="h5" component="h2">
            Language/s
@@ -34,8 +33,7 @@ const Countries = (myCountries) => {
         </CardContent>
       </CardActionArea>
     </Card>
+    
     </div>
   );
 }
-
-export default Countries;
