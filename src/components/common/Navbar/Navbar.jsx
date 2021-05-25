@@ -48,6 +48,12 @@ export const Navbar = () => {
               className={classes.inputStyle}
               onChange={(e) => setSearch(e.target.value)}
             />
+             <Typography 
+             //className={classes.TypoStyle}
+             >
+          {" "}
+          Select 2 Languages and click here to Translate them
+        </Typography>
           </div>
         </Toolbar>
       </AppBar>

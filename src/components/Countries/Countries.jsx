@@ -1,38 +1,54 @@
 import React from 'react';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
+import {Typography, Card, CardContent, CardActionArea, Button }from '@material-ui/core';
+import Flip from 'react-reveal/Flip';
 import useStyles from "./CountriesStyle";
-
 
  export const Countries = ({myCountries, addLang}) => {
   const classes = useStyles();
   return (
       <div className={classes.cards}>
+      <Flip left>
+
     <Card className={classes.card}>
       <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="Contemplative Reptile"
-        />
         <CardContent>
-          <Typography  >
-          Country Name
-          {console.log(myCountries)}
+          <Typography  variant="h5"  component="h2">
+          Name: &nbsp;
+          {myCountries.name}
           </Typography>
-          <Typography  gutterBottom  variant="h5"  component="h2">
-          Code
+         
+          <Typography  variant="h5"  component="h2">
+          Flag: &nbsp;
+          {myCountries.emoji}
+          </Typography>
+         
+          <Typography  variant="h5"  component="h2">
+          Code: &nbsp;
           {myCountries.code}
           </Typography>
-          <Typography gutterBottom   variant="h5" component="h2">
-           Language/s
+
+          <Typography  variant="h5"  component="h2">
+          Phone: &nbsp;
+          {myCountries.phone}
           </Typography>
+
+          <Typography  variant="h5"  component="h2">
+          Capital: &nbsp;
+          {myCountries.capital}
+          </Typography>
+          
+          <div >
+          <Typography className={classes.languages}  gutterBottom   variant="h5" component="h2">
+           Language/s &nbsp;
+           {myCountries.languages.slice(0,5).map(individualLanguage=> (
+          <Button className={classes.btn} key={`${individualLanguage.name}`}> {individualLanguage.name}</Button>   
+           ))}
+          </Typography>
+          </div>
         </CardContent>
       </CardActionArea>
     </Card>
+      </Flip>
     
     </div>
   );
