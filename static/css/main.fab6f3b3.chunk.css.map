@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/index.css"],"names":[],"mappings":"AAAA,EACE,qDAAwD,CACxD,QAEF,CACA,OAFE,+BAIF","file":"main.fab6f3b3.chunk.css","sourcesContent":["*{\n  font-family: 'Big Shoulders Display', cursive !important;\n  margin: 0;\n  box-sizing: border-box !important;\n}\nbody {\n  box-sizing: border-box !important;\n}\n\n\n\n\n"]}
