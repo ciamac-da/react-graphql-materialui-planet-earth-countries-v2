@@ -8,11 +8,12 @@ const useStyles = makeStyles((theme) =>({
      top:"200px",
      [theme.breakpoints.down('sm')]: {
       left:"0px !important",
-      top:"300px",
+      top:"290px !important",
     },
     [theme.breakpoints.down('lg')]: {
       display:"inline-block",
-      left:"130px"
+      left:"140px",
+      top:"250px !important",
     },
     [theme.breakpoints.up('lg')]: {
      display:"inline-block",
@@ -20,7 +21,9 @@ const useStyles = makeStyles((theme) =>({
     },
     [theme.breakpoints.up('xl')]: {
      display:"inline-block",
-     left:"15px"
+     left:"15px",
+     top:"240px",
+
     },
     },
     card: {

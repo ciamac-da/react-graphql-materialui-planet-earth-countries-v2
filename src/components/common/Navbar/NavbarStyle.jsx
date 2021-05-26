@@ -10,13 +10,13 @@ const useStyles = makeStyles((theme) =>({
           height:"300px !important",
         },
         [theme.breakpoints.down('lg')]: {
-          height:"260px",
+          height:"250px",
         },
         [theme.breakpoints.up('lg')]: {
-          height:"200px",
+          height:"258px",
         },
         [theme.breakpoints.up('xl')]: {
-          height:"200px",
+          height:"230px",
         },
 
     },
@@ -39,7 +39,16 @@ const useStyles = makeStyles((theme) =>({
     },
     topDiv: {
         display: "flex",
-        flexDirection: "column"
+        [theme.breakpoints.down('sm')]: {
+          flexDirection: "column !important",
+        },
+        [theme.breakpoints.down('lg')]: {
+          flexDirection: "row",
+        },
+        [theme.breakpoints.up('lg')]: {
+        },
+        [theme.breakpoints.up('xl')]: {
+        },
     },
     img: {
         position:"relative", 
@@ -67,19 +76,24 @@ const useStyles = makeStyles((theme) =>({
     inputStyle:{
         fontSize: "20px !important",
         textAlignLast: "center",
+        position: "relative",
         color: "#fff",
         [theme.breakpoints.down('sm')]: {
-          position: "relative",
-          top:"15px"
+          top:"15px !important",
+          left:"0px !important"
          },
          [theme.breakpoints.down('lg')]: {
-          
+          top:"60px",
+          left:"-300px"
          },
          [theme.breakpoints.up('lg')]: {
-      
+          left:"-450px",
+          fontSize:"24px"
          },
          [theme.breakpoints.up('xl')]: {
-         
+          left:"-700px",
+          fontSize:"24px",
+          top:"34px",
          },
     },
     googleTranslateTypoDiv: {
@@ -88,29 +102,47 @@ const useStyles = makeStyles((theme) =>({
        justifyContent: "center",
        alignItems: "center",
        position: "relative",
-       top:"10px"
+       top:"10px",
+       [theme.breakpoints.down('sm')]: {
+        top:"10px !important",
+       },
+       [theme.breakpoints.down('lg')]: {
+        top:"50px",
+       },
+       [theme.breakpoints.up('lg')]: {
+        top:"50px",
+        left:"100px"
+       },
+       [theme.breakpoints.up('xl')]: {
+        top:"5px",
+        left:"300px",
+       },
     },
     typo: {
-        fontSize: "20px !important",
+        fontSize: "20px",
         textAlign: "center",
         position:"relative",
         top:"5px",
         [theme.breakpoints.down('sm')]: {
-          position: "relative",
-          top:"10px"
+          position: "relative !important",
+          top:"10px !important"
          },
          [theme.breakpoints.down('lg')]: {
-          
+          position: "relative",
+          top:"45px"
          },
          [theme.breakpoints.up('lg')]: {
-      
+          left:"-100px",
+          fontSize:"24px"
          },
          [theme.breakpoints.up('xl')]: {
-         
+          left:"-350px",
+          fontSize:"24px",
+          top:"25px"
          },
     },
     typoLangs : {
-      fontSize: "20px !important",
+      fontSize: "20px",
       [theme.breakpoints.down('sm')]: {
        position: "relative",
        top:"20px"
@@ -119,7 +151,7 @@ const useStyles = makeStyles((theme) =>({
        
       },
       [theme.breakpoints.up('lg')]: {
-   
+        fontSize:"24px"
       },
       [theme.breakpoints.up('xl')]: {
       
@@ -183,4 +215,3 @@ const useStyles = makeStyles((theme) =>({
     
 }));
 export default useStyles;
-

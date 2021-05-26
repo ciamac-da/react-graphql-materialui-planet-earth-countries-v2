@@ -31,6 +31,26 @@ export const Navbar = () => {
     });
   }, [search, countries]);
 
+  let btn;
+  if(!firstLang){
+  btn =  
+  <Typography className={classes.typoLangs} >
+    Select 2 Languages to Translate
+  </Typography>  
+     } else if(!secondLang) {
+      btn =  
+      <Typography className={classes.typoLangs} >
+        Select also second Languages
+      </Typography> 
+     } else {
+      btn =  
+      <Typography className={classes.typoLangs} >
+        Click to Translate!
+      </Typography> 
+     }
+
+
+
   return (
     <div>
       <AppBar className={classes.appBar}>
@@ -53,22 +73,21 @@ export const Navbar = () => {
               autoComplete="off"
               className={classes.inputStyle}
               onChange={(e) => setSearch(e.target.value)}
-              // Search filter throught countries list...!
             />
             <div className= {classes.googleTranslateTypoDiv}>
-             <Typography 
-             className={classes.typoLangs}
-             >
-          {" "}
-          Select 2 Languages and click here to Translate!
-        </Typography>
-        
+          
+                {btn}
+  
+        {
+          firstLang  && secondLang ?
           <Button
           className={classes.translateBtn}
           onClick = { e =>
             window.open(`https://translate.google.com/?sl=${firstLang.code}&tl=${secondLang.code}&op=translate`) 
           }
           >Translate   <GTranslateIcon /></Button>
+          : null
+        }
           <Button>
            { firstLang ? <Button className={classes.firstLastBtn}>{firstLang.name}</Button> : null }
            { firstLang  && secondLang ?  <ForwardIcon className={classes.icon} />    : null    } 
