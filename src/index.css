@@ -1,7 +1,10 @@
 *{
   font-family: 'Big Shoulders Display', cursive !important;
   margin: 0;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
+}
+body {
+  box-sizing: border-box !important;
 }
 
 

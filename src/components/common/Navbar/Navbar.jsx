@@ -14,6 +14,7 @@ export const Navbar = () => {
 
   const [search, setSearch] = useState("");
 
+  // Filter search hook
   const mycountries = useMemo(() => {
     if (!search) return countries;
     return countries.filter((country) => {
@@ -47,13 +48,14 @@ export const Navbar = () => {
               autoComplete="off"
               className={classes.inputStyle}
               onChange={(e) => setSearch(e.target.value)}
+              // Search filter throught countries list...!
             />
-             <Typography 
+         {/*     <Typography 
              //className={classes.TypoStyle}
              >
           {" "}
           Select 2 Languages and click here to Translate them
-        </Typography>
+        </Typography> */}
           </div>
         </Toolbar>
       </AppBar>
