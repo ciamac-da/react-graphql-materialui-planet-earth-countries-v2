@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme) =>({
 
     appBar:{
         backgroundColor:"rgb(255, 0, 32);",
-        height:"200px",
+        height:"210px",
         width:"100%",
 
     },
@@ -41,6 +41,8 @@ const useStyles = makeStyles((theme) =>({
      borderRadius:"5px",
      textShadow:"0px 1px 5px #3273dc",
      padding: "5px",
+     position:"relative",
+     top:"5px",
      transform: "translateX(0px) !important",
      transition: "1s",
      "&:hover":{
@@ -49,14 +51,30 @@ const useStyles = makeStyles((theme) =>({
    },
     },
     searchIcon: {
-        marginTop:"20px",
+        marginTop:"5px",
     },
     inputStyle:{
-        fontSize: "24px !important",
-        textAlignLast: "center"
+        fontSize: "20px !important",
+        textAlignLast: "center",
+        color: "#fff",
+    },
+    googleTranslateTypoDiv: {
+       display: "flex",
+       flexDirection: "column",
+       justifyContent: "center",
+       alignItems: "center",
+       position: "relative",
+       top:"10px"
     },
     typo: {
-        fontSize: "24px !important"
+        fontSize: "20px !important",
+        textAlign: "center",
+        position:"relative",
+        top:"5px"
+    },
+    typoLangs : {
+      fontSize: "20px !important",
+    
 
     }
     

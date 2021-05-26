@@ -7,6 +7,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import myStyle from "./NavbarStyle";
 import { GET_COUNTRIES } from "../../../graphql/get-countries";
 import { Countries } from "../../Countries/Countries";
+import GTranslateIcon from '@material-ui/icons/GTranslate';
 
 export const Navbar = () => {
   const classes = myStyle();
@@ -50,13 +51,16 @@ export const Navbar = () => {
               onChange={(e) => setSearch(e.target.value)}
               // Search filter throught countries list...!
             />
-         {/*     <Typography 
-             //className={classes.TypoStyle}
+            <div className= {classes.googleTranslateTypoDiv}>
+             <Typography 
+             className={classes.typoLangs}
              >
           {" "}
-          Select 2 Languages and click here to Translate them
-        </Typography> */}
+          Select 2 Languages and click here to Translate!
+        </Typography>
+          <GTranslateIcon />
           </div>
+            </div>
         </Toolbar>
       </AppBar>
       {mycountries.map((country) => {

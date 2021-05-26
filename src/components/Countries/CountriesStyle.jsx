@@ -7,20 +7,27 @@ const useStyles = makeStyles((theme) =>({
      position: "relative",
      top:"200px",
      [theme.breakpoints.down('sm')]: {
+      left:"0px !important"
     },
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.down('lg')]: {
+      display:"inline-block",
+      left:"130px"
     },
     [theme.breakpoints.up('lg')]: {
      display:"inline-block",
-     left:"180px"
+     left:"150px"
+    },
+    [theme.breakpoints.up('xl')]: {
+     display:"inline-block",
+     left:"15px"
     },
     },
     card: {
         width: "350px",
-        height:"500px",
+        height:"570px",
         textAlignLast:"center",
         backgroundColor: "#3273dc",
-        margin:"20px",
+        margin:"12px",
         color:"#fff",
         fontWeight:"bolder"
  },
@@ -29,17 +36,28 @@ const useStyles = makeStyles((theme) =>({
  },
  languages: {
    display: "flex",
-   flexDirection:"column"
- },
- btn: {
-   backgroundColor:"rgb(255, 0, 32);",
-   color:"#fff",
-   fontWeight:"bolder",
-   fontSize:"16px",
-   margin:"2px"
+   flexDirection:"column",
+  },
+  btn: {
+    backgroundColor:"rgb(255, 0, 32);",
+    color:"#fff",
+    fontWeight:"bolder",
+    fontSize:"16px",
+    margin:"2px",
+    marginTop:"10px",
+    transition: "1s",
+    "&:hover": {
+    transition: "1s",
+    backgroundColor: "#fff",
+    color: "#3273dc"
+    }
  },
  emoji:{
    fontSize:"40px"
+ },
+ name: {
+   fontSize:"35px",
+   marginBottom:"10px"
  }
     
 }));

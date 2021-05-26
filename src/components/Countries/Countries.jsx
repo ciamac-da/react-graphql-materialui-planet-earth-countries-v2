@@ -15,8 +15,7 @@ import useStyles from "./CountriesStyle";
           <Typography className={classes.emoji}  variant="h5"  component="h2">
           {myCountries.emoji}
           </Typography>
-          <Typography  variant="h5"  component="h2">
-          Name: &nbsp;
+          <Typography className= {classes.name}  variant="h5"  component="h2">
           {myCountries.name}
           </Typography>
          
