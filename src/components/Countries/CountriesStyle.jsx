@@ -7,7 +7,8 @@ const useStyles = makeStyles((theme) =>({
      position: "relative",
      top:"200px",
      [theme.breakpoints.down('sm')]: {
-      left:"0px !important"
+      left:"0px !important",
+      top:"300px",
     },
     [theme.breakpoints.down('lg')]: {
       display:"inline-block",

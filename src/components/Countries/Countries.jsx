@@ -39,7 +39,7 @@ import useStyles from "./CountriesStyle";
           <Typography className={classes.languages}  gutterBottom   variant="h5" component="h2">
            Language/s &nbsp;
            {myCountries.languages.slice(0,5).map(individualLanguage=> (
-          <Button className={classes.btn} key={`${individualLanguage.name}`}> {individualLanguage.name}</Button>   
+          <Button onClick={e => addLang(individualLanguage)} className={classes.btn} key={`${individualLanguage.name}`}> {individualLanguage.name}</Button>   
            ))}
           </Typography>
           </div>

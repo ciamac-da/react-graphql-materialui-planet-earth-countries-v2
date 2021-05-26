@@ -5,8 +5,19 @@ const useStyles = makeStyles((theme) =>({
 
     appBar:{
         backgroundColor:"rgb(255, 0, 32);",
-        height:"210px",
         width:"100%",
+        [theme.breakpoints.down('sm')]: {
+          height:"300px !important",
+        },
+        [theme.breakpoints.down('lg')]: {
+          height:"260px",
+        },
+        [theme.breakpoints.up('lg')]: {
+          height:"200px",
+        },
+        [theme.breakpoints.up('xl')]: {
+          height:"200px",
+        },
 
     },
     toolbar:{
@@ -57,6 +68,19 @@ const useStyles = makeStyles((theme) =>({
         fontSize: "20px !important",
         textAlignLast: "center",
         color: "#fff",
+        [theme.breakpoints.down('sm')]: {
+          position: "relative",
+          top:"15px"
+         },
+         [theme.breakpoints.down('lg')]: {
+          
+         },
+         [theme.breakpoints.up('lg')]: {
+      
+         },
+         [theme.breakpoints.up('xl')]: {
+         
+         },
     },
     googleTranslateTypoDiv: {
        display: "flex",
@@ -70,12 +94,91 @@ const useStyles = makeStyles((theme) =>({
         fontSize: "20px !important",
         textAlign: "center",
         position:"relative",
-        top:"5px"
+        top:"5px",
+        [theme.breakpoints.down('sm')]: {
+          position: "relative",
+          top:"10px"
+         },
+         [theme.breakpoints.down('lg')]: {
+          
+         },
+         [theme.breakpoints.up('lg')]: {
+      
+         },
+         [theme.breakpoints.up('xl')]: {
+         
+         },
     },
     typoLangs : {
       fontSize: "20px !important",
+      [theme.breakpoints.down('sm')]: {
+       position: "relative",
+       top:"20px"
+      },
+      [theme.breakpoints.down('lg')]: {
+       
+      },
+      [theme.breakpoints.up('lg')]: {
+   
+      },
+      [theme.breakpoints.up('xl')]: {
+      
+      },
+    },
+    translateBtn: {
+      color: "#fff",
+      backgroundColor: "#3273dc",
+      fontWeight: "bolder",
+      [theme.breakpoints.down('sm')]: {
+        position: "relative",
+        top:"30px"
+       },
+       [theme.breakpoints.down('lg')]: {
+        
+       },
+       [theme.breakpoints.up('lg')]: {
     
-
+       },
+       [theme.breakpoints.up('xl')]: {
+       
+       },
+      "&:hover": {
+        backgroundColor: "#fff",
+        color: "#3273dc",
+      }
+    },
+    icon: {
+      color: "#fff",
+      [theme.breakpoints.down('sm')]: {
+        position: "relative",
+        top:"30px"
+       },
+       [theme.breakpoints.down('lg')]: {
+        
+       },
+       [theme.breakpoints.up('lg')]: {
+    
+       },
+       [theme.breakpoints.up('xl')]: {
+       
+       },
+    },
+    firstLastBtn:{
+      backgroundColor: "#fff",
+      color: "#3273dc",
+      [theme.breakpoints.down('sm')]: {
+        position: "relative",
+        top:"30px"
+       },
+       [theme.breakpoints.down('lg')]: {
+        
+       },
+       [theme.breakpoints.up('lg')]: {
+    
+       },
+       [theme.breakpoints.up('xl')]: {
+       
+       },
     }
     
 }));

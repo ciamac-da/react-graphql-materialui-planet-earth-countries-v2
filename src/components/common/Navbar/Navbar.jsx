@@ -1,19 +1,23 @@
 import React, { useMemo, useState } from "react";
 import { useQuery } from "@apollo/client";
 import AppBar from "@material-ui/core/AppBar";
-import { Typography, Input } from "@material-ui/core";
+import { Typography, Input, Button } from "@material-ui/core";
 import Toolbar from "@material-ui/core/Toolbar";
 import SearchIcon from "@material-ui/icons/Search";
 import myStyle from "./NavbarStyle";
 import { GET_COUNTRIES } from "../../../graphql/get-countries";
 import { Countries } from "../../Countries/Countries";
 import GTranslateIcon from '@material-ui/icons/GTranslate';
+import ForwardIcon from '@material-ui/icons/Forward';
 
 export const Navbar = () => {
   const classes = myStyle();
   const { data: { countries = [] } = {} } = useQuery(GET_COUNTRIES, {});
 
   const [search, setSearch] = useState("");
+  const [langs, setLangs] = useState([]);
+  const [firstLang, secondLang] = langs;
+  const selectLang = (lang) => setLangs([...langs, lang].slice(0,2))
 
   // Filter search hook
   const mycountries = useMemo(() => {
@@ -58,13 +62,24 @@ export const Navbar = () => {
           {" "}
           Select 2 Languages and click here to Translate!
         </Typography>
-          <GTranslateIcon />
+        
+          <Button
+          className={classes.translateBtn}
+          onClick = { e =>
+            window.open(`https://translate.google.com/?sl=${firstLang.code}&tl=${secondLang.code}&op=translate`) 
+          }
+          >Translate   <GTranslateIcon /></Button>
+          <Button>
+           { firstLang ? <Button className={classes.firstLastBtn}>{firstLang.name}</Button> : null }
+           { firstLang  && secondLang ?  <ForwardIcon className={classes.icon} />    : null    } 
+           { secondLang ? <Button className={classes.firstLastBtn}>{secondLang.name}</Button> : null }
+            </Button>
           </div>
             </div>
         </Toolbar>
       </AppBar>
       {mycountries.map((country) => {
-        return <Countries key={country.name} myCountries={country} />;
+        return <Countries key={country.name} myCountries={country} addLang={selectLang} />;
       })}
     </div>
   );
