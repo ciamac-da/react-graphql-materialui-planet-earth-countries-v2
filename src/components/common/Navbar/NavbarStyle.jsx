@@ -85,6 +85,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("lg")]: {
       left: "-450px",
       fontSize: "24px",
+      top: "100px",
     },
     [theme.breakpoints.up("xl")]: {
       left: "-700px",
