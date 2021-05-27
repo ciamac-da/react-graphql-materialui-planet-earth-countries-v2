@@ -7,8 +7,8 @@ import SearchIcon from "@material-ui/icons/Search";
 import myStyle from "./NavbarStyle";
 import { GET_COUNTRIES } from "../../../graphql/get-countries";
 import { Countries } from "../../Countries/Countries";
-import GTranslateIcon from '@material-ui/icons/GTranslate';
-import ForwardIcon from '@material-ui/icons/Forward';
+import GTranslateIcon from "@material-ui/icons/GTranslate";
+import ForwardIcon from "@material-ui/icons/Forward";
 
 export const Navbar = () => {
   const classes = myStyle();
@@ -17,7 +17,7 @@ export const Navbar = () => {
   const [search, setSearch] = useState("");
   const [langs, setLangs] = useState([]);
   const [firstLang, secondLang] = langs;
-  const selectLang = (lang) => setLangs([...langs, lang].slice(0,2))
+  const selectLang = (lang) => setLangs([...langs, lang].slice(0, 2));
 
   // Filter search hook
   const mycountries = useMemo(() => {
@@ -32,24 +32,23 @@ export const Navbar = () => {
   }, [search, countries]);
 
   let btn;
-  if(!firstLang){
-  btn =  
-  <Typography className={classes.typoLangs} >
-    Select 2 Languages to Translate
-  </Typography>  
-     } else if(!secondLang) {
-      btn =  
-      <Typography className={classes.typoLangs} >
-        Select also second Languages
-      </Typography> 
-     } else {
-      btn =  
-      <Typography className={classes.typoLangs} >
-        Click to Translate!
-      </Typography> 
-     }
-
-
+  if (!firstLang) {
+    btn = (
+      <Typography className={classes.typoLangs}>
+        Select 2 Languages to Translate
+      </Typography>
+    );
+  } else if (!secondLang) {
+    btn = (
+      <Typography className={classes.typoLangs}>
+        Select also second Language to Translate
+      </Typography>
+    );
+  } else {
+    btn = (
+      <Typography className={classes.typoLangs}>Click to Translate!</Typography>
+    );
+  }
 
   return (
     <div>
@@ -74,31 +73,47 @@ export const Navbar = () => {
               className={classes.inputStyle}
               onChange={(e) => setSearch(e.target.value)}
             />
-            <div className= {classes.googleTranslateTypoDiv}>
-          
-                {btn}
-  
-        {
-          firstLang  && secondLang ?
-          <Button
-          className={classes.translateBtn}
-          onClick = { e =>
-            window.open(`https://translate.google.com/?sl=${firstLang.code}&tl=${secondLang.code}&op=translate`) 
-          }
-          >Translate   <GTranslateIcon /></Button>
-          : null
-        }
-          <Button>
-           { firstLang ? <Button className={classes.firstLastBtn}>{firstLang.name}</Button> : null }
-           { firstLang  && secondLang ?  <ForwardIcon className={classes.icon} />    : null    } 
-           { secondLang ? <Button className={classes.firstLastBtn}>{secondLang.name}</Button> : null }
-            </Button>
-          </div>
+            <div className={classes.googleTranslateTypoDiv}>
+              {btn}
+              {firstLang && secondLang ? (
+                <Button
+                  className={classes.translateBtn}
+                  onClick={(e) =>
+                    window.open(
+                      `https://translate.google.com/?sl=${firstLang.code}&tl=${secondLang.code}&op=translate`
+                    )
+                  }
+                >
+                  Translate <GTranslateIcon />
+                </Button>
+              ) : null}
+              <Button>
+                {firstLang ? (
+                  <Button className={classes.firstLastBtn}>
+                    {firstLang.name}
+                  </Button>
+                ) : null}
+                {firstLang && secondLang ? (
+                  <ForwardIcon className={classes.icon} />
+                ) : null}
+                {secondLang ? (
+                  <Button className={classes.firstLastBtn}>
+                    {secondLang.name}
+                  </Button>
+                ) : null}
+              </Button>
             </div>
+          </div>
         </Toolbar>
       </AppBar>
       {mycountries.map((country) => {
-        return <Countries key={country.name} myCountries={country} addLang={selectLang} />;
+        return (
+          <Countries
+            key={country.name}
+            myCountries={country}
+            addLang={selectLang}
+          />
+        );
       })}
     </div>
   );
