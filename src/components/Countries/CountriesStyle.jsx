@@ -15,11 +15,11 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.up("lg")]: {
       display: "inline-block",
-      left: "150px",
+      left: "85px",
     },
     [theme.breakpoints.up("xl")]: {
       display: "inline-block",
-      left: "15px",
+      left: "16px !important",
       top: "240px",
     },
   },
