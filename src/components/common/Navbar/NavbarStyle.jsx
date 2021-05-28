@@ -179,6 +179,10 @@ const useStyles = makeStyles((theme) => ({
   firstLastBtn: {
     backgroundColor: "#fff",
     color: "#3273dc",
+    "&:hover":{
+      backgroundColor: "#fff",
+      color: "#3273dc",
+    },
     [theme.breakpoints.down("sm")]: {
       position: "relative",
       top: "30px",
